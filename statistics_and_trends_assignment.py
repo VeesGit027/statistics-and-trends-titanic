@@ -47,3 +47,34 @@ df['Survived'] = df['Survived'].astype('category')
 df['Age_Group'] = pd.cut(df['Age'],
                          bins=[0, 12, 18, 35, 60, 100],
                          labels=['Child', 'Teen', 'Young Adult', 'Adult', 'Senior'])
+
+
+
+# 5. Relational Plot (Scatter Plot)
+# Relationship between Age and Fare
+
+plt.figure()
+plt.scatter(df['Age'], df['Fare'])
+plt.xlabel("Age")
+plt.ylabel("Fare")
+plt.title("Relationship between Age and Fare")
+plt.show()
+
+print("\nRelational Plot Insight:")
+print("The scatter plot shows the relationship between passenger age and ticket fare.")
+print("There is no strong linear relationship, but higher fares appear more common in certain age groups.")
+
+
+
+# 6. Categorical Plot (Bar Chart)
+# Survival Count by Sex
+plt.figure()
+df.groupby('Sex')['Survived'].value_counts().unstack().plot(kind='bar')
+plt.title("Survival Count by Sex")
+plt.xlabel("Sex")
+plt.ylabel("Count")
+plt.show()
+
+print("\nCategorical Plot Insight:")
+print("The bar chart shows that females had a significantly higher survival rate than males.")
+
