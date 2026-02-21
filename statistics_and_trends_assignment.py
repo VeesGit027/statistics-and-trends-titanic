@@ -78,3 +78,39 @@ plt.show()
 print("\nCategorical Plot Insight:")
 print("The bar chart shows that females had a significantly higher survival rate than males.")
 
+
+
+# 7. Statistical Plot (Correlation Heatmap)
+plt.figure()
+numeric_df = df.select_dtypes(include=np.number)
+correlation = numeric_df.corr()
+
+sns.heatmap(correlation, annot=True)
+plt.title("Correlation Heatmap of Numerical Variables")
+plt.show()
+
+print("\nStatistical Plot Insight:")
+print("The heatmap shows correlations between numerical variables.")
+print("Fare has moderate correlation with Pclass, and Age shows weak correlations overall.")
+
+
+# 8. Four Main Statistical Moments (Using Fare)
+fare_mean = df['Fare'].mean()
+fare_variance = df['Fare'].var()
+fare_skewness = skew(df['Fare'])
+fare_kurtosis = kurtosis(df['Fare'])
+
+print("\nStatistical Moments for Fare:")
+print(f"Mean: {fare_mean}")
+print(f"Variance: {fare_variance}")
+print(f"Skewness: {fare_skewness}")
+print(f"Kurtosis: {fare_kurtosis}")
+
+print("\nStatistical Interpretation:")
+print("Mean represents the average fare paid by passengers.")
+print("Variance indicates how spread out the fare values are.")
+print("Positive skewness suggests a right-skewed distribution (some very high fares).")
+print("Positive kurtosis indicates heavy tails compared to a normal distribution.")
+
+
+
