@@ -114,3 +114,9 @@ print("Positive kurtosis indicates heavy tails compared to a normal distribution
 
 
 
+# 9. Critical Assessment
+print("\nCritical Assessment:")
+print("The dataset contains missing values and imbalances (e.g., gender distribution).")
+print("Dropping the Cabin column may remove potentially useful information.")
+print("Outliers in Fare significantly affect skewness and kurtosis.")
+print("Results are limited to passengers recorded and may not represent all individuals aboard.")
